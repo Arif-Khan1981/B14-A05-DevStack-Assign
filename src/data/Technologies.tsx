@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import {
   SiReact,
   SiVuedotjs,
@@ -12,16 +11,27 @@ import {
   SiTailwindcss,
   SiDocker,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import type { Technology } from "../../src/types/technology";
 
-export interface TechnologyWithIcon extends Technology {
+import { FaJava } from "react-icons/fa";
+
+import type { ReactNode } from "react";
+
+export interface TechnologyWithIcon {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  level: string;
+  rating: number;
+  badge: string;
+  badgeClassName: string;
+  iconClassName: string;
   icon: ReactNode;
 }
 
 export const technologies: TechnologyWithIcon[] = [
   {
-    id: "react",
+    id: "react1",
     name: "React",
     description:
       "A declarative, component-based JavaScript library for building modern user interfaces.",
@@ -33,8 +43,10 @@ export const technologies: TechnologyWithIcon[] = [
     iconClassName: "bg-sky-50 text-sky-500",
     icon: <SiReact />,
   },
+
+ 
   {
-    id: "vuejs",
+    id: "vuejs2",
     name: "Vue.js",
     description:
       "An approachable, performant, and versatile framework for building web user interfaces.",
@@ -47,7 +59,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiVuedotjs />,
   },
   {
-    id: "svelte",
+    id: "svelte3",
     name: "Svelte",
     description:
       "Cybernetically enhanced web apps with compile-time reactivity and zero virtual DOM overhead.",
@@ -60,7 +72,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiSvelte />,
   },
   {
-    id: "nextjs",
+    id: "nextjs4",
     name: "Next.js",
     description:
       "The React framework for full-stack web applications with hybrid static & server rendering.",
@@ -73,7 +85,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiNextdotjs />,
   },
   {
-    id: "nodejs",
+    id: "nodejs5",
     name: "Node.js",
     description:
       "An asynchronous event-driven JavaScript runtime built on Chrome's V8 engine.",
@@ -86,7 +98,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiNodedotjs />,
   },
   {
-    id: "postgresql",
+    id: "postgresql6",
     name: "PostgreSQL",
     description:
       "A powerful, open-source object-relational database system with proven reliability.",
@@ -99,7 +111,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiPostgresql />,
   },
   {
-    id: "redis",
+    id: "redis7",
     name: "Redis",
     description:
       "In-memory data structure store used as a high-speed database, cache, and message broker.",
@@ -112,7 +124,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiRedis />,
   },
   {
-    id: "javascript",
+    id: "javascript8",
     name: "JavaScript",
     description:
       "The versatile, ubiquitous scripting language powering dynamic behavior across the web.",
@@ -125,7 +137,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiJavascript />,
   },
   {
-    id: "typescript",
+    id: "typescript9",
     name: "TypeScript",
     description:
       "A strongly typed programming language that builds on JavaScript for robust tooling.",
@@ -138,7 +150,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiTypescript />,
   },
   {
-    id: "java",
+    id: "java10",
     name: "Java",
     description:
       "A secure, object-oriented programming language designed for portability and scale.",
@@ -151,7 +163,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <FaJava />,
   },
   {
-    id: "tailwindcss",
+    id: "tailwindcss11",
     name: "Tailwind CSS",
     description:
       "A utility-first CSS framework packed with classes that can be composed to build custom UI.",
@@ -164,7 +176,7 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiTailwindcss />,
   },
   {
-    id: "docker",
+    id: "docker12",
     name: "Docker",
     description:
       "A platform designed to build, share, and run containerized applications reliably.",
@@ -177,3 +189,4 @@ export const technologies: TechnologyWithIcon[] = [
     icon: <SiDocker />,
   },
 ];
+
