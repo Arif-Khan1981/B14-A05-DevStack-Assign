@@ -82,7 +82,8 @@ const Navbar: React.FC = () => {
 
 
           {isMenuOpen && (
-            <div className="absolute top-12 left-8 w-64 bg-white border-r border-b border-gray-100 shadow-lg flex flex-col py-4 px-6 gap-5 z-50"
+            <div className="absolute top-12 left-8 w-40
+            bg-linear-to-r from-orang-600 to-violet-300 bg-orange-100 shadow-xl flex flex-col py-4 px-6 gap-5 z-50"
     >
           <div className="flex flex-col gap-5">
 
