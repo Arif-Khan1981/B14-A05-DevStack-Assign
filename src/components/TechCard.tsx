@@ -65,7 +65,7 @@ const TechCard = ({
           {level}
         </span>
 
-        <div className="flex items-center gap-2 border-t border-gray-100">
+        <div className="flex items-center gap-2 border-t border-gray-100 pb-3">
           <img src={StarIcon} alt="Rating" className="h-4"/>
           <span className="font-semibold text-gray-800">
           {rating}
@@ -77,14 +77,9 @@ const TechCard = ({
         </div>
 
         {/* Add to Stack Btn */}
-        <div className="pt-5">
-          <button className="bg-orange-500 text-1xl text-white p-3 rounded-2xl w-96">Add to Stack</button>
-        </div>
-
-      </div>
-
-      
-      
+          <button className="bg-orange-500 text-1xl text-white p-3 rounded-2xl w-full transition">Add to Stack</button>
+        
+      </div>  
     </div>
   );
 };
