@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import StarIcon from "/ui/star.png";
 
 interface TechCardProps {
   name: string;
@@ -37,7 +38,7 @@ const TechCard = ({
 
         {badge && (
           <span
-            className={`rounded-full px-3 py-1 text-xs font-semibold ${badgeClassName}`}
+            className={`rounded-full px-3 py-1 text-x font-bold ${badgeClassName}`}
           >
             {badge}
           </span>
@@ -54,8 +55,8 @@ const TechCard = ({
         {description}
       </p>
 
-      {/* Category + Level */}
-      <div className="mb-5 flex flex-wrap gap-2">
+      {/* Category + Level + Rating*/}
+      <div className="mb-5 flex flex-wrap items-center gap-2">
         <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
           {category}
         </span>
@@ -63,20 +64,27 @@ const TechCard = ({
         <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
           {level}
         </span>
-      </div>
 
-      {/* Rating */}
-      <div className="flex items-center gap-2 border-t border-gray-100 pt-4">
-        <span className="text-yellow-500">★</span>
-
-        <span className="font-semibold text-gray-800">
+        <div className="flex items-center gap-2 border-t border-gray-100">
+          <img src={StarIcon} alt="Rating" className="h-4"/>
+          <span className="font-semibold text-gray-800">
           {rating}
-        </span>
+          </span>
 
-        <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-500">
           / 5.0
-        </span>
+          </span>
+        </div>
+
+        {/* Add to Stack Btn */}
+        <div className="pt-5">
+          <button className="bg-orange-500 text-1xl text-white p-3 rounded-2xl w-96">Add to Stack</button>
+        </div>
+
       </div>
+
+      
+      
     </div>
   );
 };
