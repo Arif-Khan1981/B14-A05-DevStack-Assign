@@ -75,11 +75,10 @@ const TechCard = ({
           / 5.0
           </span>
         </div>
-
-        {/* Add to Stack Btn */}
+      </div> 
+      {/* Add to Stack Btn */}
           <button className="bg-orange-500 text-1xl text-white p-3 rounded-2xl w-full transition">Add to Stack</button>
-        
-      </div>  
+         
     </div>
   );
 };
