@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import StarIcon from "/ui/star.png";
 
 interface TechCardProps {
+   id: string | number;
   name: string;
   description: string;
   category: string;
@@ -11,9 +12,12 @@ interface TechCardProps {
   badgeClassName: string;
   iconClassName: string;
   icon: ReactNode;
+  isSelected: boolean;
+  onToggle: (id: string | number) => void;
 }
 
 const TechCard = ({
+  id,
   name,
   description,
   category,
@@ -23,9 +27,11 @@ const TechCard = ({
   badgeClassName,
   iconClassName,
   icon,
+  isSelected,
+  onToggle,
 }: TechCardProps) => {
   return (
-    <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="rounded-2xl border border-gray-300 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-orange-500">
       
       {/* Icon + Badge */}
       <div className="mb-5 flex items-center justify-between">
@@ -76,9 +82,16 @@ const TechCard = ({
           </span>
         </div>
       </div> 
-      
+
       {/* Add to Stack Btn */}
-      <button className="bg-orange-500 hover:bg-pink-600 text-1xl text-white p-3 rounded-2xl w-full transition">Add to Stack</button>
+      <button onClick={() => onToggle(id)}
+        className={`text-1xl p-3 rounded-2xl w-full transition ${
+          isSelected
+            ? "bg-gray-100 text-gray-500 hover:bg-gray-200"
+            : "bg-orange-500 hover:bg-pink-600 text-white"
+        }`}
+      >
+        {isSelected ? "Added to Stack" : "Add to Stack"}</button>
          
     </div>
   );
