@@ -14,7 +14,6 @@ function App() {
       <Navbar/>
       <Hero/>
       <TechnologiesSection/>
-      <StackCard/>
       <Footer/>
     </>
   );

@@ -25,7 +25,7 @@ const TechnologiesSection = () => {
 
         {/* Two-column layout: cards grid (left) + StackCard (right) */}
         <div className="grid grid-cols-12 gap-6">
-          {/* Left: Technology Cards grid — 2/3 mobile, 1/2 sm, 3/4 lg */}
+          {/* Left: Technology Cards grid — 2/3 sm, 3/4 lg */}
           <div className="col-span-8 lg:col-span-9">
 
             {/* Technology Cards */}
@@ -47,7 +47,7 @@ const TechnologiesSection = () => {
             </div>
           </div>
 
-          {/* Right: StackCard — 1/3 mobile, 1/2 sm, 1/4 lg */}
+          {/* Right: StackCard — 1/3 sm, 1/4 lg */}
           <div className="col-span-4 lg:col-span-3">
               <div className="sticky top-14 z-10">
                 <StackCard />
