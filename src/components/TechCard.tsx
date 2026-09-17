@@ -76,8 +76,9 @@ const TechCard = ({
           </span>
         </div>
       </div> 
+      
       {/* Add to Stack Btn */}
-          <button className="bg-orange-500 text-1xl text-white p-3 rounded-2xl w-full transition">Add to Stack</button>
+      <button className="bg-orange-500 hover:bg-pink-600 text-1xl text-white p-3 rounded-2xl w-full transition">Add to Stack</button>
          
     </div>
   );
