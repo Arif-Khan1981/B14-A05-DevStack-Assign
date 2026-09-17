@@ -2,22 +2,51 @@ import { useState } from "react";
 import TechCard from "./TechCard";
 import StackCard from "./StackCard";
 import { technologies } from "../data/Technologies";
+import Toast, { type ToastMessage } from "./Toast";
 
 const TechnologiesSection = () => {
   const [selectedIds, setSelectedIds] = useState<Array<string | number>>([]);
+  const [toasts, setToasts] = useState<ToastMessage[]>([]);
+
+  const showToast = (text: string, type: ToastMessage["type"] = "info") => {
+    const id = Date.now();
+    setToasts((prev) => [...prev, { id, text, type }]);
+  };
+
+  const dismissToast = (id: number) => {
+    setToasts((prev) => prev.filter((toast) => toast.id !== id));
+  };
 
   const handleToggle = (id: string | number) => {
+    const tech = technologies.find((item) => item.id === id);
+    const isCurrentlySelected = selectedIds.includes(id);
+
     setSelectedIds((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      isCurrentlySelected ? prev.filter((item) => item !== id) : [...prev, id]
     );
+
+    if (tech) {
+      showToast(
+        isCurrentlySelected
+          ? `${tech.name} removed from stack`
+          : `${tech.name} added to stack`,
+        isCurrentlySelected ? "error" : "success"
+      );
+    }
   };
 
   const handleRemove = (id: string | number) => {
+    const tech = technologies.find((item) => item.id === id);
     setSelectedIds((prev) => prev.filter((item) => item !== id));
+
+    if (tech) {
+      showToast(`${tech.name} removed from stack`, "error");
+    }
   };
 
   const handleRemoveAll = () => {
     setSelectedIds([]);
+    showToast("All technologies removed", "error");
   };
 
   const stack = technologies.filter((tech) => selectedIds.includes(tech.id));
@@ -79,6 +108,10 @@ const TechnologiesSection = () => {
         </div>
 
       </div>
+
+      {/* Toast notifications */}
+      <Toast toasts={toasts} onDismiss={dismissToast} />
+
     </section>
   );
 };

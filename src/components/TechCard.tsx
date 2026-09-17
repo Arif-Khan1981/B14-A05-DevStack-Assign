@@ -31,7 +31,11 @@ const TechCard = ({
   onToggle,
 }: TechCardProps) => {
   return (
-    <div className="rounded-2xl border border-gray-300 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-orange-500">
+    <div className={`rounded-2xl border-2 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
+        isSelected
+          ? "border-orange-300"
+          : "border-gray-200"
+      }`}>
       
       {/* Icon + Badge */}
       <div className="mb-5 flex items-center justify-between">

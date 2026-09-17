@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import TechnologiesSection from "./components/TechnologiesSection";
 
+
 function App() {
   
 
