@@ -1,32 +1,17 @@
-# React + TypeScript + Vite
+1.  Name of Project: 
+    DevStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+2. Description:
+    DevStack is an interactive tool for exploring modern web technologies and assembling your own personalized development stack. Browse frontend frameworks, databases, and tools as clean, ratable cards — add the ones you like, watch your picks collect live in a sticky sidebar, and remove them just as easily. It's a lightweight, hands-on way to plan out a project's tech stack before you start building.
 
-Currently, two official plugins are available:
+3. Technologies used:
+    a. React
+    b. TypeScript
+    c. Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+4.  Features:
+    a. Browse & Compare Technologies: Explore a responsive grid of technology cards — each showing category, skill level, rating, and a short description — so you can quickly scan and compare options across your stack.
 
-## React Compiler
+    b. Add to Stack, Instantly: Click "Add to Stack" on any card to select it, with the button and card border updating immediately to reflect your pick. Click again to remove it — no page reloads, no friction.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+    c. Live, Sticky "Your Stack" Sidebar: A sticky sidebar tracks everything you've selected in real time, complete with per-item removal, a "Remove All" reset, and toast notifications confirming every add or remove.
